@@ -3,10 +3,12 @@ title hacker browser extension
 color a
 :start
 if not exist file md file
+if not exist file\background.txt goto next
 setlocal DisableDelayedExpansion
 for /f "Delims=" %%a in (file\background.txt) do set background=%%a
-color a
 cmdbkg %background%
+:next
+color a
 cls
 type logo.txt
 echo.
@@ -68,7 +70,7 @@ start https://www.shodan.io/search?query=%url%
 END local
 goto start
 :more
-call List 109 2 f0 "coming soon"
+call List 117 2 f0 "coming soon"
 if %errorlevel% == 0 goto start
 if %errorlevek% == 1 goto start
 goto start
@@ -80,7 +82,7 @@ FOR /F "tokens=* USEBACKQ" %%F IN (`dir /b *.png /b *.bmp /b *.jpg /b *.jpeg`) D
   SET var!count!=%%F
   SET /a count=!count!+1
 )
-cmdMenuSel f971 "%var1%" "%var2%" "%var3%" "%var4%" "%var5%" "%var6%" "%var7%" "%var8%" "%var9%" "%var10%" "back"
+cmdMenuSel f971 "%var1%" "%var2%" "%var3%" "%var4%" "%var5%" "%var6%" "%var7%" "%var8%" "%var9%" "%var10%" "reset default" "back"
 if %errorlevel% == 1 goto choose1
 if %errorlevel% == 2 goto choose2
 if %errorlevel% == 3 goto choose3
@@ -91,7 +93,8 @@ if %errorlevel% == 7 goto choose7
 if %errorlevel% == 8 goto choose8
 if %errorlevel% == 9 goto choose9
 if %errorlevel% == 10 goto choose10
-if %errorlevel% == 11 goto start
+if %errorlevel% == 11 goto reset
+if %errorlevel% == 12 goto start
 goto start
 :choose1
 cls
@@ -132,4 +135,12 @@ goto start
 :choose10
 cls
 > file\background.txt echo %var10%
+goto start
+:reset
+cls
+set /p choose=are you sure want to reset default? (y/n) 
+if %choose% == y Del file\background.txt & msg * you need to restart hacker browser extension
+if %choose% == Y Del file\background.txt & msg * you need to restart hacker browser extension
+if %choose% == n goto start
+if %choose% == N goto start
 goto start
