@@ -1,7 +1,10 @@
 # hacker browser extension
 this is a demo for hacker browser extension v1.0
 ## How to change background or wallpaper?
+move your image to the folder of hacker browser extension
+
 to change background or wallpaper you need an image that have 24 bitmap
+
 right click to the image and click Properties
 
 you can see in the Details tab at the  Bit depth
