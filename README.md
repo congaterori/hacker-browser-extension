@@ -15,3 +15,15 @@ if it not 24 open image in Paint
 save image as 24-bit Bitmap (*.bmp;*.dib)
 
 ![Bit depth](https://i.imgur.com/2y2rgvx.png)
+
+open browser.bat
+
+![Bit depth](https://i.imgur.com/QvopCXF.png)
+
+hit enter and click on setting
+
+![Bit depth](https://i.imgur.com/NjIK1B8.png)
+
+choose your image
+
+enjoy :)
